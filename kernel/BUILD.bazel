@@ -1,0 +1,21 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+cc_binary(
+    name = "kernel",
+    srcs = [
+        "boot.S",
+        "init.cc",
+    ],
+    copts = [
+        "-nostdlib",
+        "--target=i686-pc-none-elf",
+    ],
+    linkopts = [
+        "-nostdlib",
+        "--target=i686-pc-none-elf",
+        "-T $(location linker.ld)",
+    ],
+    deps = [
+        "linker.ld",
+    ],
+)
