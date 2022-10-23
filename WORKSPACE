@@ -36,6 +36,7 @@ llvm_toolchain(
     compile_flags = {"linux-x86_64": []},
     unfiltered_compile_flags = {"linux-x86_64": []},
     cxx_standard = {"linux-x86_64": "c++20"},
+    link_flags = {"linux-x86_64": ["-fuse-ld=lld"]},
     llvm_version = "14.0.0",
 )
 
