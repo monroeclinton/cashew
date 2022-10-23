@@ -33,7 +33,8 @@ load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
 llvm_toolchain(
     name = "llvm_toolchain",
     stdlib = {"linux-x86_64": "none"},
-    link_flags = {"linux-x86_64": []},
+    compile_flags = {"linux-x86_64": []},
+    unfiltered_compile_flags = {"linux-x86_64": []},
     cxx_standard = {"linux-x86_64": "c++20"},
     llvm_version = "14.0.0",
 )

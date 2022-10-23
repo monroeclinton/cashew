@@ -6,15 +6,17 @@ cc_binary(
         "boot.S",
         "init.cc",
     ],
+    features = [
+    ],
     copts = [
-        "-nostdlib",
-        "--target=i686-pc-none-elf",
+        "--target=i386-pc-none-elf",
     ],
     linkopts = [
         "-nostdlib",
-        "--target=i686-pc-none-elf",
+        "--target=i386-pc-none-elf",
         "-T $(location linker.ld)",
     ],
+    linkstatic = True,
     deps = [
         "linker.ld",
     ],
